@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Risco e Compliance para Escritórios de Advocacia | AP Informação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Paleta de cores baseada no gradiente do seu logo */
+        :root {
+            --dark-blue: #194a86;
+            --medium-blue: #2693ab;
+            --light-blue: #e0f2f7;
+            --accent-color: #007bff;
+            --text-color: #333;
+            --highlight-color: #0056b3;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-blue);
+            color: var(--text-color);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        /* --- NOVAS REGRAS DO CABEÇALHO --- */
+        header {
+            background-color: var(--light-blue);
+            padding: 40px 20px;
+            color: var(--dark-blue);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .header-logo {
+            max-width: 250px;
+            height: auto;
+            flex-shrink: 0;
+        }
+        
+        .header-text {
+            flex-grow: 1;
+            max-width: calc(100% - 265px);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+        
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.1em;
+            color: var(--dark-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .header-logo {
+                margin-bottom: 15px;
+                max-width: 180px;
+            }
+        
+            .header-text {
+                max-width: 100%;
+            }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--highlight-color);
+        }
+        
+        .section {
+            padding: 40px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .section-white {
+            background: white;
+        }
+        
+        .section-light-bg {
+            background-color: var(--light-blue);
+            box-shadow: none;
+        }
+        
+        .section h2 {
+            text-align: center;
+            color: var(--dark-blue);
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .service-item {
+            background: white;
+            padding: 25px;
+            border-radius: 5px;
+            flex: 1 1 250px;
+            text-align: center;
+            border: 1px solid var(--medium-blue);
+        }
+        
+        .service-item h3 {
+            color: var(--dark-blue);
+            margin-top: 0;
+        }
+        
+        .logos-clients img {
+            max-width: 120px;
+            height: auto;
+            opacity: 0.6;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .logos-clients {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .form-section {
+            background-color: var(--medium-blue);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        
+        .form-section h2 {
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        footer a {
+            color: var(--light-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/main/Logo%20-%20APinforma%C3%A7%C3%A3o%20-%20fundo%20transparente.png" alt="APinformação Logo" class="header-logo">
+            <div class="header-text">
+                <h1>Segurança Jurídica e Decisões Estratégicas</h1>
+                <p>Nossa plataforma oferece uma solução completa de inteligência de dados, análise de risco e compliance, otimizando a rotina do seu escritório e protegendo seus clientes.</p>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="section section-white">
+    <div class="container">
+        <h2>Vantagens da Nossa Solução para Escritórios de Advocacia</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Prevenção de Conflitos e Riscos</h3>
+                <p>Identifique e previna conflitos de interesse, riscos financeiros e de reputação em potencial. Nossa solução oferece a inteligência necessária para garantir a idoneidade de clientes e parceiros antes de qualquer compromisso, protegendo a reputação do seu escritório.</p>
+            </div>
+            <div class="service-item">
+                <h3>Agilidade na Análise de Casos</h3>
+                <p>Otimize a rotina de pesquisa da sua equipe. Com nossa busca consolidada, você economiza horas de trabalho manual em checagens de antecedentes e busca processual, liberando seu tempo para atividades estratégicas e consultoria jurídica de alto valor.</p>
+            </div>
+            <div class="service-item">
+                <h3>Compliance e Segurança Jurídica</h3>
+                <p>Garanta a conformidade regulatória com verificações completas de pessoas e empresas. Nossa plataforma facilita a realização de Due Diligence e o alinhamento com práticas de KYC (Know Your Client), fornecendo relatórios robustos para auditorias, fusões e aquisições, além de proteger contra riscos de fraude e lavagem de dinheiro.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="section section-light-bg">
+            <div class="container">
+                <h2>Nossos Serviços de Inteligência de Dados para o Setor Jurídico</h2>
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>Análise de Risco Completa</h3>
+                        <p>Análise de riscos corporativos e reputacionais. Verifique o histórico de pessoas e empresas, identificando vínculos, processos, dívidas e outras informações críticas para sua tomada de decisão jurídica.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Análise Processual</h3>
+                        <p>Checagem de antecedentes judiciais, identificação de riscos processuais e irregularidades. Obtenha dados completos sobre processos para fortalecer sua estratégia de defesa ou investigação.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Diligência Patrimonial</h3>
+                        <p>Verificação de bens e patrimônio para garantir a segurança e a conformidade de suas operações. Identifique ativos ocultos e fortaleça o processo de cobrança de dívidas para seus clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white">
+            <div class="container">
+                <h2>Nossos Módulos de Análise de Dados</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">A APinformação oferece mais de 30 módulos de serviços distintos. Nossas soluções de inteligência de dados são integradas para fornecer uma visão 360° e garantir a segurança do seu escritório. Conheça alguns deles:</p>
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>Background Check Completo</h3>
+                        <p>Verifique o histórico de pessoas e empresas, incluindo participações societárias, histórico trabalhista e restrições financeiras em fontes como Serasa e SPC. Ideal para gestão de riscos e compliance.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Busca Veicular e Patrimonial</h3>
+                        <p>Realize buscas detalhadas de veículos por placa ou chassi, consulte gravames e histórico de leilões. Complemente sua análise com a verificação de bens e patrimônio, identificando ativos para reforçar o processo de cobrança.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Checagem Jurídica e Pré-Processual</h3>
+                        <p>Obtenha dados processuais completos por CPF ou CNPJ, consulte antecedentes criminais e identifique riscos judiciais e irregularidades. Essencial para uma estratégia de defesa ou investigação robusta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white"> 
+    <div class="container">
+        <h2 style="color: var(--medium-blue);">A Confiança de Mais de 1.400 Escritórios de Advocacia</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+            Nossa plataforma completa de inteligência de dados já é a escolha de mais de 1.400 escritórios de advocacia. Capturamos dados, mas entregamos informações e inteligência para que você tenha uma visão 360° dos riscos e oportunidades de terceiros, oferecendo a segurança jurídica e a agilidade que a tomada de decisão no setor jurídico exige.
+        </p>
+        <div class="logos-clients">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/348c9eaaeed9eeb21d81f1c67618af5fc1753ae2/02-logo-ral-principal-negativo.svg
+" alt="logo Ral Advogados">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/pelegrina.png" alt="Logo Pellegrina Advogados">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/giampaulo%20logo.png" alt="Logo GiamPaulo Advogados">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/logo-tortoro-1536x667.png" alt="Logo Tortoro Advogados">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/3714ba455661830cfe232df0d63231b6cc79cd19/452495579_479008291523932_7967449356660912677_n.jpg" alt="Logo Vezzi Lapolla Advogados">
+<img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/perez_de_rezende_cover.jpeg" alt="Logo Perez e Rezende advogados">
+        </div>
+    </div>
+</section>
+
+        <section class="section section-white">
+            <div class="container">
+                <h2>Aplicações Práticas para o seu Escritório</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">Nossa plataforma não apenas fornece dados, mas atua como um braço de inteligência estratégica, otimizando o seu trabalho em áreas críticas como:</p>
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>Due Diligence & Compliance</h3>
+                        <p>Realize verificações completas de pessoas e empresas, garantindo que as operações dos seus clientes estejam em conformidade com as leis e regulamentações. A plataforma da APinformação ajuda na prevenção de sanções e penalidades, identificando riscos de fraude, inadimplência e reputação.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Análise em Litígios</h3>
+                        <p>Obtenha uma visão 360° da parte contrária em um processo. Nossa busca consolidada fornece dados detalhados sobre sócios, histórico de falência, processos e ativos ocultos, fortalecendo sua estratégia de defesa ou de cobrança.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Prevenção de Conflitos e Riscos</h3>
+                        <p>Identifique potenciais conflitos de interesse, riscos financeiros e de reputação antes de formalizar qualquer relação profissional. Garanta a idoneidade ao lidar com clientes e fornecedores com base em dados precisos e atualizados, alinhando seu escritório às práticas de KYC (Know Your Client) e KYS (Know Your Supplier).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="form" class="form-section">
+            <div class="container">
+                <h2>Pronto para otimizar seus processos e garantir a segurança jurídica?</h2>
+                <p>Clique no botão abaixo para iniciar uma conversa direta no WhatsApp e descobrir como podemos ajudar a elevar o nível de segurança do seu escritório.</p>
+                <a href="https://api.whatsapp.com/send?phone=5511948962888&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20de%20análise%20de%20risco%20para%20escritórios%20de%20advocacia." class="cta-button">Fale com a APinformação pelo WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 APinformação. Todos os direitos reservados. Visite nosso site: <a href="https://www.apinformacao.net.br" style="color: #ffffff;">www.apinformacao.net.br</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
