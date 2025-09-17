@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Risco e Compliance para Escritórios de Advocacia | AP Informação</title>
+    <title>Análise de Risco e Compliance para Escritórios de Advocacia | APinformação</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
             --highlight-color: #0056b3;
         }
         
+        *{box-sizing:border-box}
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
@@ -32,63 +33,85 @@
             margin: auto;
             padding: 20px;
         }
-        
-        /* --- NOVAS REGRAS DO CABEÇALHO --- */
+
+        /* ---------- CABEÇALHO PADRONIZADO (igual às outras páginas) ---------- */
         header {
-            background-color: var(--light-blue);
-            padding: 40px 20px;
-            color: var(--dark-blue);
-        }
-        
-        .header-content {
+            background: linear-gradient(90deg, var(--dark-blue), var(--medium-blue));
+            padding: 0 20px;
+            height: 72px;
+            box-sizing: border-box;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: left;
-            gap: 15px;
-            flex-wrap: wrap;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        
         .header-logo {
-            max-width: 250px;
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+            height: 100%;
+            padding-right: 12px;
+        }
+        .header-logo img {
+            max-height: 64px;
+            max-width: 220px;
+            width: auto;
             height: auto;
-            flex-shrink: 0;
+            display: block;
+            object-fit: contain;
         }
-        
-        .header-text {
-            flex-grow: 1;
-            max-width: calc(100% - 265px);
+        .header-nav { flex: 1 1 auto; display: flex; justify-content: center; }
+        .header-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; align-items: center; }
+        .header-nav a, .header-nav span {
+            text-decoration: none; color: white; font-weight: 700;
+            cursor: pointer; transition: color 0.3s, transform 0.2s;
         }
-        
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            font-weight: 700;
-            color: var(--dark-blue);
+        .header-nav a:hover, .header-nav span:hover { color: var(--light-blue); transform: scale(1.05); }
+        .header-nav li { position: relative; }
+
+        .header-nav li .dropdown-menu {
+            visibility: hidden; opacity: 0; position: absolute; top: 100%; left: -15px;
+            background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 0; min-width: 220px; z-index: 1000; border-radius: 5px;
+            transition: visibility 0s, opacity 0.3s linear; display:block;
+            text-align:left;
         }
-        
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.1em;
-            color: var(--dark-blue);
+        .header-nav li .dropdown-menu li { list-style:none; }
+        .header-nav li .dropdown-menu a {
+            display: block; padding: 8px 20px; font-weight: 400; color: var(--text-color); white-space: nowrap;
         }
-        
+        .header-nav li:hover .dropdown-menu { visibility: visible; opacity: 1; }
+        .header-cta { margin-left: 30px; flex: 0 0 auto; }
+        .header-cta a {
+            background-color: white; color: var(--dark-blue);
+            padding: 12px 25px; border-radius: 30px; font-weight: bold; text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .header-cta a:hover { background-color: var(--light-blue); color: var(--dark-blue); }
+
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        
-            .header-logo {
-                margin-bottom: 15px;
-                max-width: 180px;
-            }
-        
-            .header-text {
-                max-width: 100%;
-            }
+            header { height: 60px; padding: 0 12px; }
+            .header-logo img { max-height: 46px; max-width: 160px; }
+            .header-nav ul, .header-cta { display: none; }
         }
-        
+
+        /* ---------- HERO (titulo/subtitulo que rolam com a página) ---------- */
+        .hero {
+            background: linear-gradient(180deg, rgba(38,147,171,0.06), rgba(224,242,247,0.4));
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--dark-blue);
+        }
+        .hero .kicker { font-weight:700; color:var(--medium-blue); margin-bottom:8px; }
+        .hero h1 { font-size: 2.2rem; margin: 6px 0; font-weight:700; }
+        .hero p { margin: 10px auto 0; max-width: 860px; color: var(--text-color); line-height:1.5; }
+
+        /* pequeno ajuste para manter container semelhante ao original */
+        .container-small { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        /* ---------- Restante do seu CSS (mantido) ---------- */
         .cta-button {
             display: inline-block;
             background-color: var(--accent-color);
@@ -194,15 +217,53 @@
 </head>
 <body>
 
+    <!-- CABEÇALHO PADRONIZADO -->
     <header>
-        <div class="container header-content">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/main/Logo%20-%20APinforma%C3%A7%C3%A3o%20-%20fundo%20transparente.png" alt="APinformação Logo" class="header-logo">
-            <div class="header-text">
-                <h1>Segurança Jurídica e Decisões Estratégicas</h1>
-                <p>Nossa plataforma oferece uma solução completa de inteligência de dados, análise de risco e compliance, otimizando a rotina do seu escritório e protegendo seus clientes.</p>
-            </div>
+        <div class="header-logo">
+            <a href="/site/">
+                <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/36d5eab5b6cf22741d66c95eae5857a60141dee2/logo%20novo%20branco%20copiar.png" alt="AP Informação Logo">
+            </a>
+        </div>
+
+        <nav class="header-nav" aria-label="Navegação principal">
+            <ul>
+                <li>
+                    <span>Serviços</span>
+                    <ul class="dropdown-menu">
+                         <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
+                        <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
+                        <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
+                        <li><a href="https://apinformacao.net.br/site/lgpd/">Compliance e LGPD</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span>Setores</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://sacapinformacao.github.io/Landpage-Advocacia/">Jurídico</a></li>
+                        <li><a href="https://sacapinformacao.github.io/lanpage-Im-veis/">Imobiliário</a></li>
+                        <li><a href="https://sacapinformacao.github.io/Landpage-Industrias/">Industrial</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="https://apinformacao.net.br/site/planos/">Planos</a></li>
+                <li><a href="https://apinformacao.net.br/site/sobre-nos/">Sobre Nós</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-cta">
+            <a href="https://api.whatsapp.com/send?phone=5511948962888&text=Ola!%20Gostaria%20de%20saber%20mais%20sobre%20as%20solucoes%20da%20APinformacao." target="_blank">Fale Conosco</a>
         </div>
     </header>
+
+    <!-- HERO (titulo/subtitulo agora rolam com a página) -->
+    <section class="hero">
+        <div class="container">
+            <div class="kicker">Soluções para Escritórios de Advocacia</div>
+            <h1>Segurança Jurídica e Decisões Estratégicas</h1>
+            <p>Nossa plataforma oferece uma solução completa de inteligência de dados, análise de risco e compliance, otimizando a rotina do seu escritório e protegendo seus clientes.</p>
+        </div>
+    </section>
     
     <main>
         <section class="section section-white">
@@ -273,13 +334,12 @@
             Nossa plataforma completa de inteligência de dados já é a escolha de mais de 1.400 escritórios de advocacia. Capturamos dados, mas entregamos informações e inteligência para que você tenha uma visão 360° dos riscos e oportunidades de terceiros, oferecendo a segurança jurídica e a agilidade que a tomada de decisão no setor jurídico exige.
         </p>
         <div class="logos-clients">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/348c9eaaeed9eeb21d81f1c67618af5fc1753ae2/02-logo-ral-principal-negativo.svg
-" alt="logo Ral Advogados">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/348c9eaaeed9eeb21d81f1c67618af5fc1753ae2/02-logo-ral-principal-negativo.svg" alt="logo Ral Advogados">
             <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/pelegrina.png" alt="Logo Pellegrina Advogados">
             <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/giampaulo%20logo.png" alt="Logo GiamPaulo Advogados">
             <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/logo-tortoro-1536x667.png" alt="Logo Tortoro Advogados">
             <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/3714ba455661830cfe232df0d63231b6cc79cd19/452495579_479008291523932_7967449356660912677_n.jpg" alt="Logo Vezzi Lapolla Advogados">
-<img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/perez_de_rezende_cover.jpeg" alt="Logo Perez e Rezende advogados">
+            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/perez_de_rezende_cover.jpeg" alt="Logo Perez e Rezende advogados">
         </div>
     </div>
 </section>
@@ -316,8 +376,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 APinformação. Todos os direitos reservados. Visite nosso site: <a href="https://www.apinformacao.net.br" style="color: #ffffff;">www.apinformacao.net.br</a></p>
-        </div>
+            <p>&copy; 2025 APinformação. Todos os direitos reservados. 
     </footer>
 
 </body>
