@@ -320,32 +320,129 @@
     .section h2 { color:var(--dark-blue); text-align:center; margin:0 0 14px; font-size:1.8rem; }
     .service-list { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:16px; }
     
-    /* Estilo para a seção de cor clara (section-light-bg), conforme a estrutura original */
+    /* Estilo para a seção de cor clara */
     .section-light-bg { 
-        background-color: var(--light-blue) !important; 
-        box-shadow: none !important; 
-        padding: 48px 20px; /* Mantendo o padding padronizado */
+        background-color: #fff !important; /* Fundo Branco */
+        box-shadow: 0 4px 10px rgba(24,38,63,0.06) !important; /* Mantém a sombra padrão */
+        padding: 48px 20px;
     } 
     
     .service-item {
         background:#fff; border-radius:8px; padding:22px; border:1px solid rgba(38,147,171,0.08);
         min-width:220px; flex:1 1 260px; box-shadow:0 6px 18px rgba(15,35,60,0.03);
     }
-    .service-item h3 { margin-top:0; color:var(--medium-blue); }
+    /* Alteração da cor dos títulos de cards para preto */
+    .service-item h3 { 
+        margin-top:0; 
+        color: #000; 
+    }
 
     /* Estilo da CTA Final */
     .form-section { background: var(--medium-blue); color:#fff; padding:40px 20px; border-radius:10px; text-align:center; }
-    .cta-button { display:inline-block; background:var(--accent-color); color:#fff; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:700; }
-    .cta-button:hover { background:#0056b3; }
+    /* Estilo do botão da CTA final */
+    .cta-button { 
+        display:inline-block; 
+        background: #fff; 
+        color: var(--medium-blue); 
+        padding:14px 24px; 
+        border-radius:8px; 
+        text-decoration:none; 
+        font-weight:700; 
+        border: none; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+    .cta-button:hover { 
+        background: #f0f0f0; 
+        color: var(--dark-blue); 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-    /* Estilo do Hero/Banner */
-    .hero { background: linear-gradient(180deg, rgba(38,147,171,0.06), rgba(224,242,247,0.4)); padding: 56px 20px; text-align: center; color: var(--dark-blue); }
-    .hero .container { display:flex; flex-direction:column; align-items:center; gap:10px; max-width:980px; }
-    .hero h1 { font-size:2.2rem; margin:0; font-weight:700; }
-    .hero p { margin:0; color:var(--muted); font-size:1.05rem; line-height:1.5; max-width:900px; }
-    .hero h1 { color: var(--dark-blue); }
-    .hero p { color: var(--muted); }
-    .hero .kicker { font-weight:700; color:var(--medium-blue); margin-bottom:8px; }
+    /* Estilo do Hero/Banner - ALTERADO PARA LAYOUT DE 2 COLUNAS */
+    .hero { background: #fff; padding: 56px 20px; color: var(--dark-blue); }
+    .hero .container { 
+        display: flex; 
+        align-items: center; 
+        gap: 40px; 
+        max-width: 1200px; /* Garante que o container use mais espaço */
+        flex-wrap: wrap; /* Permite quebrar em mobile */
+    }
+    
+    /* Estilos da Coluna de Texto (Esquerda) */
+    .hero-text {
+        flex: 1 1 55%; 
+        text-align: left;
+    }
+    .hero h1 { 
+        font-size: 2.5rem; 
+        margin: 0 0 10px; 
+        font-weight: 700; 
+        color: var(--dark-blue); 
+    }
+    .hero p { 
+        margin: 0 0 15px; 
+        color: var(--text-color); 
+        font-size: 1.1rem; 
+        line-height: 1.6; 
+        max-width: none; 
+    }
+    .hero .kicker { 
+        font-weight:700; 
+        color:var(--medium-blue); 
+        margin-bottom:8px; 
+        text-transform:uppercase; 
+    }
+    
+    /* Estilos da Coluna de Formulário (Direita) */
+    .hero-form {
+        flex: 1 1 35%; /* Ocupa um pouco menos de espaço que o texto */
+        background: #fff; 
+        padding: 30px; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+        border: 1px solid var(--light-blue);
+        min-width: 300px;
+        max-width: 450px;
+        margin: 0 auto; /* Centraliza no mobile */
+    }
+    .hero-form h2 {
+        color: var(--dark-blue); /* Título do formulário: azul escuro */
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+    }
+    .form-group {
+        margin-bottom: 15px;
+        position: relative;
+    }
+    .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1em;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+    .form-group input:focus {
+        border-color: var(--medium-blue);
+    }
+    /* Estilo do botão do formulário */
+    .form-button {
+        width: 100%;
+        background: var(--dark-blue); /* Fundo Azul Escuro */
+        color: white; /* Texto Branco */
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s;
+        letter-spacing: 0.5px;
+    }
+    .form-button:hover {
+        background: var(--medium-blue);
+    }
 
 
     /* ESTILO PARA OS LOGOS DE CLIENTES */
@@ -370,7 +467,6 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .footer-column {
-        /* CORREÇÃO APLICADA: Reduz a largura mínima para 5 colunas caberem no desktop */
         flex: 1 1 180px; 
     }
     .footer-column h3 {
@@ -424,11 +520,16 @@
         opacity: 0.7;
     }
     
-    /* O bloco .footer-group e seus estilos foram removidos para garantir o empilhamento correto no mobile */
-    
-    @media (max-width: 1024px) {
-        .service-grid {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    @media (max-width: 768px) {
+        .hero .container {
+            flex-direction: column;
+            gap: 30px;
+        }
+        .hero-text {
+            text-align: center;
+        }
+        .hero-form {
+            max-width: 100%;
         }
     }
     
@@ -449,14 +550,14 @@
             <li>
                 <span>Serviços</span>
                 <ul class="dropdown-menu">
-                    <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
-                    <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
-                    <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
-                    <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
                     <li><a href="https://sacapinformacao.github.io/Cadastral/">Validação Cadastral</a></li>
+                    <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
                     <li><a href="https://sacapinformacao.github.io/Credito/">Análise de Crédito</a></li>
+                    <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
                     <li><a href="https://sacapinformacao.github.io/checagem-pre-processual/">Checagem Pré-processual</a></li>
                     <li><a href="https://sacapinformacao.github.io/devedores-e-reus/">Localização de Devedores e Réus</a></li>
+                    <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
+                    <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
                 </ul>
             </li>
             <li>
@@ -489,9 +590,29 @@
 
     <section class="hero">
         <div class="container">
-            <div class="kicker">Soluções para Escritórios de Advocacia</div>
-            <h1>Segurança Jurídica e Decisões Estratégicas</h1>
-            <p>Nossa plataforma oferece uma solução completa de inteligência de dados, análise de risco e compliance, otimizando a rotina do seu escritório e protegendo seus clientes.</p>
+            <div class="hero-text">
+                <h1>Segurança Jurídica e Decisões Estratégicas para o Setor Jurídico</h1>
+                <p>Nossa plataforma oferece uma solução completa de <strong>inteligência de dados, análise de risco e compliance</strong>, otimizando a rotina do seu escritório e protegendo seus clientes. Já somos a <strong>escolha de mais de 1.400 escritórios de advocacia</strong>. Capturamos dados, mas entregamos <strong>informações e inteligência</strong> para que você tenha uma visão 360° dos riscos e oportunidades, oferecendo a <strong>segurança jurídica e a agilidade</strong> que a tomada de decisão no setor exige.</p>
+            </div>
+            
+            <div class="hero-form">
+                <h2>Quero uma demonstração!</h2>
+                <form id="demonstracao-form" onsubmit="return submitFormToMail()">
+                    <div class="form-group">
+                        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-mail Corporativo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Número de WhatsApp" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="cnpj" name="cnpj" placeholder="Número do CNPJ" required>
+                    </div>
+                    <button type="submit" class="form-button">Solicitar minha demonstração</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -558,21 +679,18 @@
         </section>
 
         <section class="section section-white"> 
-    <div class="container">
-        <h2 style="color: var(--medium-blue);">A Confiança de Mais de 1.400 Escritórios de Advocacia</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
-            Nossa plataforma completa de inteligência de dados já é a escolha de mais de 1.400 escritórios de advocacia. Capturamos dados, mas entregamos informações e inteligência para que você tenha uma visão 360° dos riscos e oportunidades de terceiros, oferecendo a segurança jurídica e a agilidade que a tomada de decisão no setor jurídico exige.
-        </p>
-        <div class="logos-clients">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/348c9eaaeed9eeb21d81f1c67618af5fc1753ae2/02-logo-ral-principal-negativo.svg" alt="logo Ral Advogados">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/pelegrina.png" alt="Logo Pellegrina Advogados">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/giampaulo%20logo.png" alt="Logo GiamPaulo Advogados">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/logo-tortoro-1536x667.png" alt="Logo Tortoro Advogados">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/3714ba455661830cfe232df0d63231b6cc79cd19/452495579_479008291523932_7967449356660912677_n.jpg" alt="Logo Vezzi Lapolla Advogados">
-            <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/perez_de_rezende_cover.jpeg" alt="Logo Perez e Rezende advogados">
-        </div>
-    </div>
-</section>
+            <div class="container">
+                <h2 style="color: var(--dark-blue);">A Confiança de Mais de 1.400 Escritórios de Advocacia</h2>
+                <div class="logos-clients">
+                    <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/348c9eaaeed9eeb21d81f1c67618af5fc1753ae2/02-logo-ral-principal-negativo.svg" alt="logo Ral Advogados">
+                    <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/pelegrina.png" alt="Logo Pellegrina Advogados">
+                    <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/giampaulo%20logo.png" alt="Logo GiamPaulo Advogados">
+                    <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/logo-tortoro-1536x667.png" alt="Logo Tortoro Advogados">
+                    <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/3714ba455661830cfe232df0d63231b6cc79cd19/452495579_479008291523932_7967449356660912677_n.jpg" alt="Logo Vezzi Lapolla Advogados">
+                    <img src="https://raw.githubusercontent.com/sacapinformacao/clientes/10c3f8b11a2990af2ee2319141406d669aa7802a/perez_de_rezende_cover.jpeg" alt="Logo Perez e Rezende advogados">
+                </div>
+            </div>
+        </section>
 
         <section class="section section-white">
             <div class="container">
@@ -625,14 +743,14 @@
         <div class="footer-column">
             <h3>Serviços</h3>
             <ul>
-                <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
-                <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
-                <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
-                <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
                 <li><a href="https://sacapinformacao.github.io/Cadastral/">Validação Cadastral</a></li>
+                <li><a href="https://sacapinformacao.github.io/Enriquecimento/">Enriquecimento de Dados</a></li>
                 <li><a href="https://sacapinformacao.github.io/Credito/">Análise de Crédito</a></li>
+                <li><a href="https://sacapinformacao.github.io/BackGroundCheck/">Background Check</a></li>
                 <li><a href="https://sacapinformacao.github.io/checagem-pre-processual/">Checagem Pré-processual</a></li>
                 <li><a href="https://sacapinformacao.github.io/devedores-e-reus/">Localização de Devedores e Réus</a></li>
+                <li><a href="https://sacapinformacao.github.io/Veiculos/">Análise de Veículos</a></li>
+                <li><a href="https://sacapinformacao.github.io/Compliance/">Compliance e LGPD</a></li>
             </ul>
         </div>
         <div class="footer-column">
@@ -666,5 +784,45 @@
         <p>© 1997-2025 Todos os direitos reservados à APinformação.</p>
     </div>
   </footer>
+
+  <script>
+    /**
+     * Função JavaScript para capturar os dados do formulário e criar um link mailto.
+     * Isso abre o cliente de e-mail do usuário com os campos preenchidos.
+     */
+    function submitFormToMail() {
+        const form = document.getElementById('demonstracao-form');
+        const nome = form.querySelector('#nome').value;
+        const email = form.querySelector('#email').value;
+        const whatsapp = form.querySelector('#whatsapp').value;
+        const cnpj = form.querySelector('#cnpj').value;
+
+        // Validação simples (garante que campos obrigatórios não estão vazios)
+        if (!nome || !email || !whatsapp || !cnpj) {
+            alert("Por favor, preencha todos os campos obrigatórios.");
+            return false;
+        }
+
+        const subject = 'Solicitação de Demonstração - Página Advocacia';
+        
+        // Constrói o corpo da mensagem com os dados e a descrição solicitada
+        const bodyContent = 
+            `Dados do Solicitante:\n` +
+            `Nome Completo: ${nome}\n` +
+            `Email Corporativo: ${email}\n` +
+            `Número de WhatsApp: ${whatsapp}\n` +
+            `CNPJ: ${cnpj}\n\n` +
+            `Descrição: solicitação de demonstração e que seu preenchimento veio da pagina de advocacia.`;
+
+        // Cria o link mailto com o assunto e o corpo codificados
+        const mailtoLink = `mailto:contato@apinformacao.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+
+        // Redireciona para o link mailto para abrir o cliente de e-mail
+        window.location.href = mailtoLink;
+
+        // Impede o envio padrão do formulário (o que causaria um erro ou redirecionamento inesperado)
+        return false; 
+    }
+  </script>
 </body>
 </html>
